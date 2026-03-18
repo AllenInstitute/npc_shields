@@ -179,6 +179,14 @@ DR2014 = Shield(
 )
 """DR2014 dual hemisphere - MPE drawing 0283-200-14"""
 
+DR2015 = Shield(
+    name="2015",
+    drawing_id="PI-2015-B_2015",
+    drawing_svg=DRAWINGS_DIR / "2015.svg",
+    hole_coordinates_csv=COORDINATES_DIR / "2015.csv",
+)
+"""Templeton implant - MPE drawing PI-2015-B_2015"""
+
 
 def get_svg_data_with_insertions(
     shield: npc_shields.types.Shield,
