@@ -44,11 +44,15 @@ jobs:
       run: |
         pdm install -G dev
         
-    - name: Test, format, lint
+    - name: Configure aws credentials
       env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_IAM_ROLE: ${{ vars.AWS_IAM_ROLE }}
+        AWS_DEFAULT_REGION: ${{ vars.AWS_DEFAULT_REGION }}
+      uses: aws-actions/configure-aws-credentials@v6
+      with:
+        role-to-assume: ${{ vars.AWS_IAM_ROLE }}
+        aws-region: ${{ vars.AWS_DEFAULT_REGION }}
+    - name: Test, format, lint
       run: |
         mkdir .mypy_cache
         pdm run prebuild
