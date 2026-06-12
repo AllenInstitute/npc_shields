@@ -53,8 +53,6 @@ jobs:
         role-to-assume: ${{ vars.AWS_IAM_ROLE }}
         aws-region: ${{ vars.AWS_DEFAULT_REGION }}
     - name: Test, format, lint
-      env:
-        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
       run: |
         mkdir .mypy_cache
         pdm run prebuild
