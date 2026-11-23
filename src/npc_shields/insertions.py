@@ -25,7 +25,7 @@ def validate_probe_insertion(
     >>> validate_probe_insertion(i.shield, {"A": "A99"}, i.probes)
     Traceback (most recent call last):
     ...
-    ValueError: probe='A' cannot be assigned to hole='A99': not a valid hole in insertion.shield.name='2002'
+    ValueError: probe='A' cannot be assigned to hole='A99': not a valid hole in shield.name='2002'
     """
     new_values = tuple(new_insertion.values())
 
