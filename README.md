@@ -9,6 +9,8 @@
 
 Tools for Neuropixels probe insertion into SHIELD implants: providing suggested targets, recording actual insertions, storing notes.
 
+The Jupyter widgets need an extra dependency: `pip install npc_shields[widgets]`.
+
 ## Insertion record widget
 The main purpose of this repository is to provide a notebook widget for recording the locations of probe insertions during an ecephys experiment:  
 ![image](https://github.com/user-attachments/assets/554e0ecb-1376-4c30-a981-e64796d379d4)

@@ -6,7 +6,6 @@ authors = [
     { name = "bjhardcastle", email = "ben.hardcastle@alleninstitute.org" },
 ]
 dependencies = [
-    "ipywidgets>=7",
     "npc-session>=0.1.30",
     "pydantic>=2.7.1",
     "eval-type-backport>=0.2.0",
@@ -21,6 +20,11 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: Microsoft :: Windows",
     "Operating System :: POSIX :: Linux",
+]
+
+[project.optional-dependencies]
+widgets = [
+    "ipywidgets>=7",
 ]
 
 [project.license]
@@ -47,6 +51,7 @@ dev = [
     "mypy>=1.4.1",
     "pytest-cov>=4.1.0",
     "black>=23.7.0",
+    "ipywidgets>=7",
 ]
 
 [tool.pdm.scripts]
