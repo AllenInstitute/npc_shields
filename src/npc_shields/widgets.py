@@ -22,6 +22,7 @@
 # # Get an implant with suggested targets from a previously-saved record
 # >>> suggested_targets = InsertionWidget.from_record(pathlib.Path('examples/example-record.json'))
 """
+
 from __future__ import annotations
 
 import datetime
@@ -71,7 +72,7 @@ class InsertionWidget(ipw.HBox):
             save_paths = pathlib.Path(save_paths)
         if not isinstance(save_paths, Iterable):
             save_paths = (save_paths,)
-        self.save_paths: Iterable[pathlib.Path] = save_paths  # type: ignore [assignment]
+        self.save_paths: Iterable[pathlib.Path] = save_paths  # type: ignore[assignment, unused-ignore]
 
         self.insertion = insertion
         self.initial_targets = dict(insertion.probes)
@@ -261,7 +262,7 @@ class InjectionWidget(ipw.VBox):
     ) -> None:
         self.session = session
         self.injection_day_index = injection_day_index
-        self.save_paths = save_paths  # type: ignore [assignment]
+        self.save_paths = save_paths  # type: ignore[assignment, unused-ignore]
         if shield_name is not None:
             self.shield = npc_shields.shields.get_shield(shield_name)
         else:

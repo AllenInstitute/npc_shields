@@ -72,8 +72,7 @@ class Shield(Protocol):
         (columns: 'Target', 'AP', 'ML')"""
         ...
 
-    def __hash__(self) -> int:
-        ...
+    def __hash__(self) -> int: ...
 
     def to_json(self) -> dict[str, Any]:
         """Get a JSON-serializable representation of the shield."""
